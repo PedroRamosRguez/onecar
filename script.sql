@@ -6,12 +6,20 @@ CREATE SCHEMA IF NOT EXISTS `onecar` DEFAULT CHARACTER SET utf8 COLLATE utf8_gen
 USE `onecar` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`Usuarios`
+-- Table `onecar`.`Usuarios`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `onecar`.`Usuarios` (
   `idUsuarios` INT NOT NULL AUTO_INCREMENT,
-  `username` VARCHAR(45) NULL,
-  `password` VARCHAR(45) NULL,
+  `Nombre` VARCHAR(45) NOT NULL,
+  `Apellidos` VARCHAR(45) NOT NULL,
+  `Username` VARCHAR(45) NOT NULL,
+  `Password` VARCHAR(45) NOT NULL,
+  `Edad` INT NOT NULL,
+  `Email` VARCHAR(45) NOT NULL,
+  `Sexo` VARCHAR(10) NOT NULL,
+  `Vehiculo` VARCHAR(2) NOT NULL,
+  `Tipo_Usuario` VARCHAR(45) NOT NULL,
+  `Zona` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idUsuarios`))
 ENGINE = InnoDB;
 
@@ -21,6 +29,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `onecar`.`Trayectos` (
   `idTrayectos` INT NOT NULL AUTO_INCREMENT,
+  `Zona` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idTrayectos`))
 ENGINE = InnoDB;
 
