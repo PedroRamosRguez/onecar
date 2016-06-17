@@ -20,11 +20,11 @@ connection.connect((err)=>{
 });
 
 //peticion post del login a la platforma.
-  router.get('/',(req,res)=>{
+  router.post('/',(req,res)=>{
   console.log("estoy en el controlador de viajes...");
-  console.log(req.body);
      let destino = req.body.destino.toUpperCase(),
          data = {},
+	 array = [], 
  	 valido=0;
      //console.log("variable  usuario: "+usuario+", variable pass: "+pass);
      connection.query('SELECT *  FROM Usuarios ',(err,rows,fields)=>{
@@ -35,16 +35,20 @@ connection.connect((err)=>{
 	    //console.log(rows[i]);
 	    if(rows[i].Zona === destino && rows[i].Tipo_Usuario === "CONDUCTOR"){
 		//res.redirect(200,'/');//cambiarlo para que dirija a la pagina en banot principal...			
-	   	data["Usuarios"]=rows[i]; 
-		valido=1;
-		res.jsonp(data);
+	   	console.log("coincidencia...");
+		data["Usuarios"] = rows[i];
+		array.push(rows[i]);
+		console.log(data); 
+		valido=1;	
 	    }
          } 
 	}
-        if(valido===0){   
+        if(valido === 0){   
           console.log("no se encontraron coincidencias");
           res.status(500).send('Error de busqueda de destinos');
           //res.redirect('/'); modificar para que luego envie a la pagina del logueo de bannot
+	}else{
+	 res.status(200).jsonp(array);
 	}	 
      });
   });
