@@ -1,8 +1,8 @@
 (() => {
   'use strict';
-  const express = require("express");
-  const router = express.Router();
-  const mysql = require('mysql');
+  const express = require("express"),
+         router = express.Router(),
+         mysql = require('mysql');
   
   var connection = mysql.createConnection({
     host: 'localhost',
@@ -25,7 +25,7 @@ connection.connect((err)=>{
     }; 
       if (err){
         console.log('error al conectar a la base de datos..');
-        //res.status(500).send('error');
+        res.status(500).send('error al conectar a la base de datos');
         throw err;
       }  
       console.log(rows);
@@ -33,50 +33,53 @@ connection.connect((err)=>{
         data["Usuarios"] = rows;
         res.jsonp(data);
       }else{
-        res.jsonp(data);
+        res.status(200).jsonp(data);
       }
     });
   });	//este es el cierre de router.get
   //peticion post para el registro de un usuario. Actualmente es una prueba de un insert y el script, no esta del todo correcto ya que el id debe autoincrementar solo.
-  router.post('/',(req,res,next)=>{
-     //console.log(req.body.username);
-     //console.log(req.body.password);
-     //console.log("datos pasados...");
-     let usuario=req.body.username,
-         pass=req.body.password,
- 	 valido=0;
-     //console.log("variable  usuario: "+usuario+", variable pass: "+pass);
-     connection.query('SELECT * FROM Usuarios ',(err,rows,fields)=>{
+  router.post('/',(req,res)=>{
+     let nombre = req.body.nombre,
+	 apellidos = req.body.apellidos,
+         usuario = req.body.username,
+         pass = req.body.password,
+	 edad = req.body.edad,
+	 email = req.body.email,
+         sexo = req.body.sexo,
+         vehiculo = req.body.vehiculo,
+         tipousuario= "",
+         zona = req.body.zona.toUpperCase(),
+ 	 valido = 0;
+      connection.query('SELECT * FROM Usuarios ',(err,rows,fields)=>{
         if(err){
 	   throw err;
         }else{
 	  for (var i=0;i<rows.length;i++){
-	    //console.log(rows[i]);
-	    if(rows[i].username===usuario){
+	    if(rows[i].username === usuario){
 		console.log("coincidencia encontrada");
 		valido=1;		
 	    }
-	    console.log("i="+i);
-         }	
-	//  console.log(rows.length);
-	  //console.log("yya existe un usuario con ese nombre");
-	  
+         }  
 	}
         console.log("valido="+valido);
         if(valido===0){   
           console.log("no se encontraron coincidencias por tanto se inserta el usuario...");
-          connection.query('INSERT INTO Usuarios(username,password)values("'+usuario+'",md5("'+pass+'"))',(err)=>{
+          if(vehiculo === "Si"){
+            tipousuario = "CONDUCTOR";
+          }else{
+	    tipousuario = "PASAJERO";
+          }
+	  connection.query('INSERT INTO Usuarios(Nombre,Apellidos,Username,Password,Edad,Email,Sexo,Vehiculo,Tipo_Usuario,Zona)values("'+nombre+'","'+apellidos+'","'+usuario+'",md5("'+pass+'"),"'+edad+'","'+email+'","'+sexo+'","'+vehiculo+'","'+tipousuario+'","'+zona+'")',(err)=>{
           if (err){
             console.log('error al ingresar..');
             throw err;
           }
           res.status(200).send("exito al registrarse");
           });
-        }else{
+          }else{
            res.status(500).send("YA EXISTE UN USUARIO CON ESE NICK");
          }
-    });
-});
-
+        });
+   });
 module.exports = router;
 })();

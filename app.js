@@ -19,7 +19,8 @@ app.use(bodyParser.json());
  // Guardamos las rutas que nos proporciona index en index
  const index = require('./routes/index'),
        usuario = require('./routes/usuario'),
-       login = require('./routes/login');
+       login = require('./routes/login'),
+       viaje = require('./routes/viajes');
  
  // Capturamos la variable de entorno NODE_ENV
  var env = process.env.NODE_ENV || 'development';
@@ -32,6 +33,7 @@ app.use(bodyParser.json());
 app.use('/', index);
 app.use('/usuario', usuario);
 app.use('/login',login);
+app.use('/viajes',viaje);
  // Si se produce un error en la ruta, enviamos un not found
  app.use(function(req, res, next) {
      var err = new Error('Not Found');

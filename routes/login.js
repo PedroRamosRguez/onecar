@@ -19,34 +19,13 @@ connection.connect((err)=>{
   } 
   console.log('conectado a la bbdd..');
 });
-/*
-  router.get('/',(req,res)=>{
-    connection.query("SELECT * from Usuarios",(err, rows, fields)=>{
-    let data={
-    
-    }; 
-      if (err){
-        console.log('error al conectar a la base de datos..');
-        //res.status(500).send('error');
-        throw err;
-      }  
-      console.log(rows);
-      if(rows.length != 0){
-        data["Usuarios"] = rows;
-        res.jsonp(data);
-      }else{
-        res.jsonp(data);
-      }
-    });
-  });	//este es el cierre de router.get
-*/  
 //peticion post para el registro de un usuario. Actualmente es una prueba de un insert y el script, no esta del todo correcto ya que el id debe autoincrementar solo.
   router.post('/',(req,res)=>{
-   console.log("estoy en el controlador de login...");
-   console.log(req.body.username);
-   console.log(req.body.password);
-   console.log("password cifrada: "+ crypto.createHash('md5').update(req.body.password).digest("hex"));
-   console.log("datos pasados..."); 
+  // console.log("estoy en el controlador de login...");
+  // console.log(req.body.username);
+   //console.log(req.body.password);
+   //console.log("password cifrada: "+ crypto.createHash('md5').update(req.body.password).digest("hex"));
+   //console.log("datos pasados..."); 
      let usuario=req.body.username,
          pass=crypto.createHash('md5').update(req.body.password).digest("hex"),
  	 valido=0;
