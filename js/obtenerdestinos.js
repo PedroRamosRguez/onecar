@@ -7,7 +7,7 @@ console.log(busqueda);
       url: 'http://10.6.128.175:8080/viajes',
       dataType:"jsonp",
       success: function(datos) {
-        
+        //window.open("http://banot.etsii.ull.es/alu4718/Onecar/principal.html",'_blank');
         console.log("no hubo errores...");
         //console.log(datos);
         document.getElementById("texto").innerHTML="";
@@ -34,44 +34,5 @@ console.log(busqueda);
       }
     });
   }
-  /* Función que realiza la consulta de ajax*/
-
-
-
-/*function destinos() {
-   console.log("prueba");
-    $.ajax({
-      url: './js/usuarios.json',
-      type: 'GET',
-      data: { 'parametro': "values"},
-      dataType:"json",
-
-      success: function(datos) {
-        document.getElementById("texto").innerHTML="";
-        
-        var valor=origen.value.toLowerCase();
-        console.log(valor);
-        $.each(datos,function(i,campos)
-        {
-          $.each(campos, function(j, valores){
-          if(valor==valores.zona.toLowerCase())
-          {
-            $('#texto').append('<p> Nombre: ' +valores.nombre);
-            $('#texto').append('<p> Edad: ' +valores.edad);
-            $('#texto').append('<p> Nombre Usuario: ' +valores.nusuario);
-            $('#texto').append('<p> Antigüedad: ' +valores.antiguedad);
-          }
-        });  
-        })
-        
-      },
-      error: function(jqXHR, textStatus, error) {
-        console.log("error....");
-      }
-    });
-  }
-*/
-  
-
   
   
