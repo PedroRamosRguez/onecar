@@ -31,11 +31,12 @@ connection.connect((err)=>{
     }
     if(rows.length!=0){
       data["Usuarios"]=rows;
-      res.status(200).jsonp(data);
+      res.jsonp(data);
     }else{
       res.status(500).send('base de datos vacía');
     }
   });
+  
 });
 module.exports = router;
 })();

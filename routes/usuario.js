@@ -69,15 +69,18 @@ connection.connect((err)=>{
           }else{
 	    tipousuario = "PASAJERO";
           }
-	  connection.query('INSERT INTO Usuarios(Nombre,Apellidos,Username,Password,Edad,Email,Sexo,Vehiculo,Tipo_Usuario,Zona)values("'+nombre+'","'+apellidos+'","'+usuario+'",md5("'+pass+'"),"'+edad+'","'+email+'","'+sexo+'","'+vehiculo+'","'+tipousuario+'","'+zona+'")',(err)=>{
-          if (err){
+	   connection.query('INSERT INTO Usuarios(Nombre,Apellidos,Username,Password,Edad,Email,Sexo,Vehiculo,Tipo_Usuario,Zona)values("'+nombre+'","'+apellidos+'","'+usuario+'",md5("'+pass+'"),"'+edad+'","'+email+'","'+sexo+'","'+vehiculo+'","'+tipousuario+'","'+zona+'")',(err)=>{
+           if (err){
             console.log('error al ingresar..');
+	    res.redirect(500,'http://banot.etsii.ull.es/alu4718/Onecar/registro.html');	
             throw err;
-          }
-          res.status(200).send("exito al registrarse");
+           }
+          //res.status(200).send("exito al registrarse");
+            console.log('exito al registrarse');
+	    res.redirect(200,'http://banot.etsii.ull.es/alu4718/Onecar/index.html');
           });
           }else{
-           res.status(500).send("YA EXISTE UN USUARIO CON ESE NICK");
+          res.status(500).send("YA EXISTE UN USUARIO CON ESE NICK");
          }
         });
    });

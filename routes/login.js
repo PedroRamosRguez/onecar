@@ -20,38 +20,29 @@ connection.connect((err)=>{
   console.log('conectado a la bbdd..');
 });
 //peticion post para el registro de un usuario. Actualmente es una prueba de un insert y el script, no esta del todo correcto ya que el id debe autoincrementar solo.
-  router.post('/',(req,res)=>{
-  // console.log("estoy en el controlador de login...");
-  // console.log(req.body.username);
-   //console.log(req.body.password);
-   //console.log("password cifrada: "+ crypto.createHash('md5').update(req.body.password).digest("hex"));
-   //console.log("datos pasados..."); 
+  router.post('/',(req,res)=>{ 
      let usuario=req.body.username,
          pass=crypto.createHash('md5').update(req.body.password).digest("hex"),
  	 valido=0;
-     //console.log("variable  usuario: "+usuario+", variable pass: "+pass);
      connection.query('SELECT *  FROM Usuarios ',(err,rows,fields)=>{
         if(err){
 	   throw err;
         }else{
 	  for (var i=0;i<rows.length;i++){
-	    //console.log(rows[i]);
-	    if(rows[i].username === usuario && rows[i].password === pass){
-		console.log("coincidencia encontrada");
-		res.redirect(200,'/');//cambiarlo para que dirija a la pagina en banot principal...			
+	    if(rows[i].Username === usuario && rows[i].Password === pass){
+		console.log("coincidencia encontrada");					
 	   	valido=1;
 	    }
-	    console.log("i="+i);
          }	
-	//  console.log(rows.length);
-	  //console.log("yya existe un usuario con ese nombre"); 
 	}
         console.log("valido="+valido);
         if(valido===0){   
           console.log("no se encontraron coincidencias, error de loging, introduce bien la pass o registrese");
-          res.status(500).send('Error de login');
-          //res.redirect('/'); modificar para que luego envie a la pagina del logueo de bannot
-	}
+	  res.status(500).send('Error al introducir usuario o contraseña');
+	}else{
+         res.redirect(302,'http://banot.etsii.ull.es/alu4718/Onecar/principal.html');
+        }
+      
      });
   });
 module.exports = router;
