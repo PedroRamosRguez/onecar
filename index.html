@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    
+    
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <base target="_blank" />
+    <link rel="icon" href="img/icono-coche.ico" type="image/x-icon"/> <!-- Icono de la página -->
+    <meta charset="utf-8">
+    <title>OneCar</title>
+
+    <!-- Hoja de estilo propia -->
+    <link href="css/style.css" type="text/css" rel="stylesheet"/>
+    
+</head>
+
+
+<body>
+    
+    <main role="main">
+        <div class="row valign-wrapper micenter">
+            
+            
+            <div class="valign offset-s4 col s4 offset-s4 formulario">
+    
+                <form action="http://10.6.128.175:8080/login" method="POST">
+                    
+                    <div class="row valign">
+                        
+                        <div class="input-field col s12 m6 valign">
+                            <input type="text" id="formusuraio" name="username" placeholder="Usuario" aria-required="true"/>
+                            <label for="formusuario">Usuario</label>
+                        </div>
+                        
+                        <div class="input-field col s12 m6 valign">
+                            <input type="password" id="formcontraseña" name="password" placeholder="Contraseña" aria-required="true"/>
+                            <label for="formcontraseña">Contraseña</label>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="row valign">
+                        
+                        <div class="col s12 valign center">
+                            <button class="mibtn waves-effect waves-light" type="submit" name="action">Entrar
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+                    </div>
+                        
+                        
+                    <div class="row valign">
+                                                 
+                        <div class="col s12 valign center">
+                            <label for="registrarse">
+                                ¿No estás registrado? <a target=_self href="registro.html">Registrate aquí.</a>
+                            </label>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                </form>
+                
+            </div>
+            
+        </div>
+    </main>
+    
+    <footer class="mipage-footer" role=”contentinfo”>
+        <div class="mifooter-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col s2">
+                        © 2016 Copyright Text
+                    </div>
+                    <div class="offset-s8 col s2">
+                        <a href="about.html">Acerca</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+        
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    
+    <!--js para validar el campo email-->
+    <script type="text/javascript" src="js/validacion.js"></script>
+    
+    <script type="text/javascript" src="js/menu.js"></script>
+
+
+</body>
+
+
+</html>

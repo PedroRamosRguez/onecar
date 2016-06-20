@@ -1,0 +1,166 @@
+/*poner footer automaticamente abajo*/
+body {
+  /*para mostrar el footer siempre en la posicion de abajo independientemente del tamaño de la ventana.*/
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-image:url("../img/fondo.jpg");
+    /*Esto es para hacer la imagen responsiva*/
+    max-width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+main {
+    flex: 1 0 auto;
+}
+
+
+h1{
+  color: #ffffff;
+  font-size: 3rem;
+  margin-left: 0.5rem;
+}
+
+
+/*-------------------------NAVBAR----------------------------*/
+/*Esto sería el color de la barra de navegacion*/
+.nav-wrapper{
+  background-color: #705230;
+}
+  
+/*cambio de color-fondo de la navegacion en pantallas pequeñas*/
+.side-nav {
+  background-color: #795548;
+}
+
+/*cambio de color-letra de la navegacion en pantallas pequeñas*/
+.side-nav a {
+  color: white;
+}
+
+.side-nav :hover a{
+  color:black;
+}
+
+
+
+
+/*--------------------FORMULARIO-------------------*/
+#formulario{
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+
+
+/*Aqui va el estilo del campo del label de Origen, Destino, Buscar */
+.input-field label {
+  color: #529FB7;
+  font-size: 1rem;
+  padding-left: 0.3rem;
+  padding-bottom: 0.2rem;
+}
+
+.input-field label.active{
+  font-size: 1rem;
+}
+
+
+/*Cuadro input*/
+input:not([type]), input[type=text], input[type=date]{
+    background-color: #ffffff;
+    border: none;
+    border-radius: 0.6rem;
+    outline: none;
+    height: 3rem;
+    width: 100%;
+    font-size: 1rem;
+    margin: 0 0 15px 0;
+    padding-left: 1rem;
+    box-shadow: none;
+    box-sizing: content-box;
+    transition: all .3s;
+    color: #000000;
+}
+
+
+/*COLOR PLACEHOLDER*/
+::-webkit-input-placeholder {
+  color: #7B7878;
+  padding-left: 0px;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #7B7878;
+  padding-left: 0px;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #7B7878;
+  padding-left: 0px;
+}
+
+:-ms-input-placeholder {
+  color: #7B7878;
+  padding-left: 0px;
+}
+
+
+/*Boton formulario*/
+.mibtn{
+  border: none;
+  border-radius: 0.6rem;
+  display: inline-block;
+  height: 3rem;
+  line-height: 36px;
+  outline: 0;
+  padding: 0 2rem;
+  margin-top: 15px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  color: #fff;
+  background-color: #26a69a;
+  text-align: center;
+  letter-spacing: .5px;
+  transition: .2s ease-out;
+  cursor: pointer;
+}
+
+.mibtn i{
+  font-size: 1.3rem;
+  line-height: inherit;
+}
+
+
+.mibtn:hover{
+  background-color: #2bbbad;
+}
+
+
+
+/*--------------------FOOTER----------------------*/
+
+footer.mipage-footer {
+  margin-top: 0px;
+}
+
+footer.mipage-footer .mifooter-copyright {
+  overflow: hidden;
+  height: 50px;
+  line-height: 50px;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #705230;
+}
+
+
+footer a{
+  color: rgba(255, 255, 255, 0.8);
+} 

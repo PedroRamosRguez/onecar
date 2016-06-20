@@ -1,0 +1,53 @@
+{
+    "usuarios": [
+        {
+            "nombre": "Eraclio",
+            "apellidos": "Benitez Fuentes",
+            "edad": "22",
+            "sexo": "Masculino",
+            "email": "eracliobeni@gmail.com",
+            "nusuario": "eracliobeni22",
+            "vehiculo": "Si",
+            "modelo" : "Volkswagen",
+            "antiguedad" : "12 meses",
+            "zona" : "Adeje"
+        },
+        {
+            "nombre": "Rafael",
+            "apellidos": "Callado Silvo",
+            "edad": "19",
+            "sexo": "Masculino",
+            "email": "rafiki@gmail.com",
+            "nusuario": "rafitaull",
+            "vehiculo": "Si",
+            "modelo": "Volvo",
+            "antiguedad": "7 meses",
+            "zona" : "Adeje"
+        },
+    	{
+            "nombre": "Sonia",
+            "apellidos": "Gomez Gonzalez",
+            "edad": "23",
+            "sexo": "Femenino",
+            "email": "sonigmz@gmail.com",
+            "nusuario": "soniagomez",
+            "vehiculo": "Si",
+            "modelo": "Subaru",
+            "antiguedad": "24 meses",
+            "zona": "La Laguna"
+        },
+    	{
+            "nombre": "Jesus",
+            "apellidos": "Perez Mitin",
+            "edad": "18",
+            "sexo": "Masculino",
+            "email": "jesusito@gmail.com",
+            "nusuario": "jesuperez18",
+            "vehiculo": "Si",
+            "modelo" : "Mercedes",
+            "antiguedad" : "21 meses",
+            "zona" : "Radazul"
+        }
+    ]
+
+}
