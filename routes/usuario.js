@@ -55,13 +55,12 @@ connection.connect((err)=>{
 	   throw err;
         }else{
 	  for (var i=0;i<rows.length;i++){
-	    if(rows[i].username === usuario){
+	    if(rows[i].Username === usuario){
 		console.log("coincidencia encontrada");
 		valido=1;		
 	    }
          }  
 	}
-        console.log("valido="+valido);
         if(valido===0){   
           console.log("no se encontraron coincidencias por tanto se inserta el usuario...");
           if(vehiculo === "Si"){
@@ -77,7 +76,7 @@ connection.connect((err)=>{
            }
           //res.status(200).send("exito al registrarse");
             console.log('exito al registrarse');
-	    res.redirect(200,'http://banot.etsii.ull.es/alu4718/Onecar/index.html');
+	    res.redirect(302,'http://banot.etsii.ull.es/alu4718/Onecar/index.html');
           });
           }else{
           res.status(500).send("YA EXISTE UN USUARIO CON ESE NICK");
