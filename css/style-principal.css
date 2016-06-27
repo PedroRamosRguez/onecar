@@ -59,14 +59,14 @@ h1{
 
 /*Aqui va el estilo del campo del label de Origen, Destino, Buscar */
 .input-field label {
-  color: #529FB7;
-  font-size: 1rem;
+  color: #407CBD;
   padding-left: 0.3rem;
   padding-bottom: 0.2rem;
 }
 
 .input-field label.active{
-  font-size: 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
 
@@ -142,6 +142,14 @@ input:not([type]), input[type=text], input[type=date]{
 
 .mibtn:hover{
   background-color: #2bbbad;
+}
+
+.json{
+  color:#1FB0A1; 
+  font-size: 1.3rem;
+  margin-left: 25px;
+  border-radius: 15px;
+  background-color:  rgba(0, 0, 0, 0.3);
 }
 
 

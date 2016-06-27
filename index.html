@@ -2,7 +2,19 @@
 <html lang="es">
 
 <head>
-    
+    <script>function utmx_section(){}function utmx(){}(function(){var
+k='124491465-0',d=document,l=d.location,c=d.cookie;
+if(l.search.indexOf('utm_expid='+k)>0)return;
+function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+</script><script>utmx('url','A/B');</script>
+<!-- End of Google Analytics Content Experiment code -->
     
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -18,6 +30,7 @@
     <!-- Hoja de estilo propia -->
     <link href="css/style.css" type="text/css" rel="stylesheet"/>
     
+
 </head>
 
 
@@ -34,8 +47,9 @@
                     <div class="row valign">
                         
                         <div class="input-field col s12 m6 valign">
-                            <input type="text" id="formusuraio" name="username" placeholder="Usuario" aria-required="true"/>
+                            <input type="text" id="formusuario" name="username" placeholder="Usuario" aria-required="true"/>
                             <label for="formusuario">Usuario</label>
+                            
                         </div>
                         
                         <div class="input-field col s12 m6 valign">
@@ -58,10 +72,7 @@
                     <div class="row valign">
                                                  
                         <div class="col s12 valign center">
-                            <label for="registrarse">
-                                ¿No estás registrado? <a target=_self href="registro.html">Registrate aquí.</a>
-                            </label>
-                            
+                                ¿No estás registrado? <a id="registro" target=_self href="registro.html">Registrate aquí.</a>                            
                         </div>
                         
                     </div>
@@ -77,11 +88,14 @@
         <div class="mifooter-copyright">
             <div class="container">
                 <div class="row">
-                    <div class="col s2">
-                        © 2016 Copyright Text
+                    <div class="col s4">
+                        © 2016 Copyright 
                     </div>
-                    <div class="offset-s8 col s2">
-                        <a href="about.html">Acerca</a>
+                    <div class="col offset-s4 col s2">
+                       <a href="help.html">Ayuda</a> 
+                    </div>
+                    <div class="col s2">
+                        <a target=_self href="about.html">Acerca</a>
                     </div>
                 </div>
             </div>
